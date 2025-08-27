@@ -1,68 +1,293 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PyClicker</title>
+  <title>PyClicker - Effortless Automation</title>
+  <link rel="icon" type="image/svg"
+    href="assets/icon.svg">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <nav class="navbar">
     <div class="logo">PyClicker</div>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <header class="hero">
     <div class="hero-content">
-      <h1>Automatize. Save Time. Reduce Work.</h1>
-      <p>Official Macros and Autoclicker Software for Productivity and Gaming.</p>
+      <h1>Automate Your Repetitive Tasks</h1>
+      <p>The ultimate macro and auto-clicker software for enhancing productivity and gaming performance. Save time,
+        reduce effort.</p>
 
-      <!-- Botón con dropdown -->
-      <div class="dropdown">
-        <button class="btn btn-primary dropdown-btn">Download Now ▾</button>
-        <div class="dropdown-content">
-          <a href="#">Windows</a>
-          <a href="#">macOS</a>
-          <a href="#">Linux</a>
+      <div class="hero-buttons" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+        <!-- Botón de download dropdown existente -->
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-btn">Download Now ▾</button>
+          <div class="dropdown-content">
+            <a
+              href="https://github.com/sPROFFEs/autoclicker/releases/download/1.0/PyclickRecorder_Windows_installer.exe"><i
+                class="fab fa-windows"></i> Windows Installer (Free)</a>
+            <a href="#"><i class="fab fa-windows"></i> Windows Pro (License)</a>
+            <a href="https://github.com/sPROFFEs/autoclicker/releases/download/1.0/PyclickRecorder_Linux_installer.sh"><i
+                class="fab fa-linux"></i> Linux Installer (Free)</a>
+            <a href="#"><i class="fab fa-linux"></i> Linux Pro (Coming Soon)</a>
+            <a href="https://github.com/sPROFFEs/autoclicker"><i class="fab fa-github"></i> Source Code (Free)</a>
+          </div>
         </div>
+
+        <!-- Botón hacia pricing -->
+        <a href="#pricing" class="btn btn-secondary">Pricing</a>
+      </div>
+
+    </div>
+    <div class="hero-image">
+      <div class="animation-container">
+        <div class="gear gear-1"><i class="fas fa-cog"></i></div>
+        <div class="gear gear-2"><i class="fas fa-cog"></i></div>
+        <div class="mouse-icon"><i class="fas fa-mouse"></i></div>
       </div>
     </div>
   </header>
 
   <section id="features" class="features">
-    <h2>Feature Highlights</h2>
+    <h2>Core Features</h2>
     <div class="feature-grid">
       <div class="card">
-        <h3>Precision</h3>
-        <p>Exact intervals and advanced configuration for each task.</p>
+        <div class="card-icon">⚙️</div>
+        <h3>Advanced Automation</h3>
+        <p>Create complex macros with custom scripts, loops, and conditional logic for any application.</p>
       </div>
       <div class="card">
-        <h3>Simplicity</h3>
-        <p>Intuitive interface that anyone can use without a learning curve.</p>
+        <div class="card-icon">🎯</div>
+        <h3>Pixel-Perfect Precision</h3>
+        <p>Utilize screen coordinates and image recognition to ensure your clicks are always accurate.</p>
       </div>
       <div class="card">
-        <h3>Lifetime license</h3>
-        <p>Get a license now and enjoy for lifetime.</p>
+        <div class="card-icon">✨</div>
+        <h3>Intuitive Interface</h3>
+        <p>A user-friendly design that makes it simple to record, edit, and execute macros in minutes.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="cta">
-    <h2>Ready to get started?</h2>
-    <p>Contact support to get a license for your device.</p>
-    <!-- Botón mailto -->
-    <a href="mailto:test@test.com?subject=License%20Request%20PyClicker" class="btn btn-secondary">Get License</a>
+  <section id="how-it-works" class="how-it-works">
+    <h2>How It Works in 3 Simple Steps</h2>
+    <div class="steps-container">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Record Your Actions</h3>
+        <p>Press record and perform any task. PyClicker will capture your mouse movements, clicks, and keyboard inputs.
+        </p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Edit & Customize</h3>
+        <p>Fine-tune your macro. Adjust timings, add loops, or insert custom commands with our powerful editor.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Assign & Execute</h3>
+        <p>Assign a hotkey to your macro and execute it anytime, in any application, with a single keystroke.</p>
+      </div>
+    </div>
   </section>
 
+  <section id="testimonials" class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>"PyClicker has saved me hours of tedious work. The macro editor is powerful and easy to use. A must-have for
+          any power user."</p>
+        <div class="testimonial-author">- Alex, Data Analyst</div>
+      </div>
+      <div class="testimonial-card">
+        <p>"As a gamer, this tool is a game-changer. I can automate my grinding sessions and focus on strategy. The
+          precision is spot on."</p>
+        <div class="testimonial-author">- Sarah, Pro Gamer</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="license-tutorial" class="how-it-works">
+    <h2>How to Activate Your License</h2>
+    <div class="steps-container">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Download and open the Software</h3>
+        <p>Launch PyClicker Pro, copy the ID key that would be genereated by the software.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Purchase a Pro License</h3>
+        <p>Choose the Pro plan, write your email and the generated key by the software.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Enter Your Key</h3>
+        <p>Once the payment is completed an activation key would be sent to your email attached to the payment.
+          Copy and paste the license key into the activation field and click 'Activate'.</p>
+      </div>
+    </div>
+    <p class="license-note">
+      <b>Important:</b> The license is valid for a single device. While the key remains valid if you format your
+      computer, it will be invalidated if you change your hardware. Please contact support to transfer your license to a
+      new device.
+    </p>
+  </section>
+
+  <section id="pricing" class="pricing">
+    <h2>Choose Your Plan</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Free</h3>
+        <div class="price">$0</div>
+        <ul>
+          <li>✓ Multiplatform python version</li>
+          <li>✓ Basic Macro Recording</li>
+          <li>✓ Unlimited Executions</li>
+          <li>✗ Macros management</li>
+          <li>✗ Macros scheduling</li>
+          <li>✗ Dark mode</li>
+          <li>✗ Background execution</li>
+          <li>✗ Shortcuts detection such as CTRL+C/CTRL+V</li>
+          <li>✗ Windows startup viabile</li>
+        </ul>
+        <a href="#" class="btn btn-secondary">Download Free</a>
+      </div>
+
+      <div class="pricing-card recommended">
+        <h3>Pro Lifetime</h3>
+        <div class="price">$1,99</div>
+        <ul>
+          <li>✓ Windows C# version</li>
+          <li>✓ Basic Macro Recording</li>
+          <li>✓ Unlimited Executions</li>
+          <li>✓ Macros management</li>
+          <li>✓ Macros scheduling</li>
+          <li>✓ Dark mode</li>
+          <li>✓ Background execution</li>
+          <li>✓ Shortcuts detection such as CTRL+C/CTRL+V</li>
+          <li>✓ Windows startup viabile</li>
+        </ul>
+
+        <!-- Botón Buy -->
+        <button class="btn btn-secondary" id="buyBtn">Buy PyClicker - $1,99</button>
+
+        <!-- Overlay -->
+        <div id="buyOverlay" class="overlay">
+          <div class="overlay-content">
+            <a href="#" class="close-btn">&times;</a>
+            <h2>Complete Your Purchase</h2>
+            <form id="paypalOverlayForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_s-xclick" />
+              <input type="hidden" name="hosted_button_id" value="ZTVQM2TDD9V7U" />
+              <input type="hidden" id="customFieldOverlay" name="custom" value="" />
+
+              <label class="pricing-field" for="overlayEmail">Your Email:</label>
+              <input class="pricing-field" type="email" id="overlayEmail" name="os0" placeholder="your@email.com"
+                required />
+
+              <label class="pricing-field" for="overlayKey">Software-Generated Key:</label>
+              <input class="pricing-field" type="text" id="overlayKey" placeholder="ABC123-XYZ456" required />
+
+              <input type="hidden" name="currency_code" value="EUR" />
+              <input type="submit" class="btn btn-secondary" value="Pay with PayPal" />
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions or feedback? Reach out to us. We'd love to hear from you!</p>
+    <a href="https://mail.google.com/mail/?view=cm&to=pyclickermanager.material438@slmails.com" target="_blank"
+      class="btn btn-primary">Email Us</a>
+  </section>
+
+  <script>
+    // Antes de enviar el formulario, generamos un ID único y combinamos todo en el campo custom
+    document.getElementById("paypalForm").addEventListener("submit", function (e) {
+      const email = document.getElementById("buyerEmail").value.trim();
+      const userKey = document.getElementById("userKey").value.trim();
+      if (!email || !userKey) {
+        e.preventDefault(); // Evitar envío si faltan datos
+        alert("Please enter both your email and software key.");
+        return;
+      }
+      const uniqueId = "pyc-" + Date.now(); // ID de compra único basado en timestamp
+      // Combinamos: CompraID | Email | SoftwareKey
+      document.getElementById("customField").value = `${uniqueId}|${email}|${userKey}`;
+    });
+  </script>
+
+
   <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">PyClicker</div>
+      <div class="footer-links">
+        <a href="#" data-overlay="privacy-overlay">Privacy Policy</a> ·
+        <a href="#" data-overlay="terms-overlay">Terms of Use</a> ·
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="social-icons">
+        <a href="https://github.com/sPROFFEs/autoclicker">GitHub</a>
+      </div>
+    </div>
     <p>© 2025 PyClicker | All rights reserved</p>
-    <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a></p>
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- Overlays -->
+  <div id="privacy-overlay" class="overlay">
+    <div class="overlay-content">
+      <a href="#" class="close-btn">&times;</a>
+      <h2>Privacy Policy</h2>
+      <p>Your privacy is important to us. It is PyClicker's policy to respect your privacy regarding any information we
+        may collect from you across our website.</p>
+      <p>We only ask for personal information when we truly need it to provide a service to you. We collect it by fair
+        and lawful means, with your knowledge and consent. We also let you know why we’re collecting it and how it will
+        be used.</p>
+      <p>We only retain collected information for as long as necessary to provide you with your requested service. What
+        data we store, we’ll protect within commercially acceptable means to prevent loss and theft, as well as
+        unauthorized access, disclosure, copying, use or modification.</p>
+      <p>We don’t share any personally identifying information publicly or with third-parties, except when required to
+        by law.</p>
+    </div>
+  </div>
+
+  <div id="terms-overlay" class="overlay">
+    <div class="overlay-content">
+      <a href="#" class="close-btn">&times;</a>
+      <h2>Terms of Use</h2>
+      <p>By accessing the website at pyclicker.com, you are agreeing to be bound by these terms of service, all
+        applicable laws and regulations, and agree that you are responsible for compliance with any applicable local
+        laws.</p>
+      <p>Permission is granted to temporarily download one copy of the materials (information or software) on
+        PyClicker's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a
+        transfer of title.</p>
+      <p>This license shall automatically terminate if you violate any of these restrictions and may be terminated by
+        PyClicker at any time.</p>
+    </div>
+  </div>
 </body>
+
 </html>
