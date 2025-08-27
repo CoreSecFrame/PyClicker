@@ -45,3 +45,28 @@ window.addEventListener('click', (e) => {
     });
   }
 });
+
+// Overlay logic
+document.querySelectorAll('[data-overlay]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const overlayId = link.getAttribute('data-overlay');
+    document.getElementById(overlayId).classList.add('show');
+  });
+});
+
+document.querySelectorAll('.overlay .close-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    btn.closest('.overlay').classList.remove('show');
+  });
+});
+
+// Close overlay on clicking the background
+document.querySelectorAll('.overlay').forEach(overlay => {
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove('show');
+    }
+  });
+});
