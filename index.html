@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <nav class="navbar">
     <div class="logo">PyClicker</div>
@@ -21,7 +23,8 @@
   <header class="hero">
     <div class="hero-content">
       <h1>Automate Your Repetitive Tasks</h1>
-      <p>The ultimate macro and auto-clicker software for enhancing productivity and gaming performance. Save time, reduce effort.</p>
+      <p>The ultimate macro and auto-clicker software for enhancing productivity and gaming performance. Save time,
+        reduce effort.</p>
 
       <div class="dropdown">
         <button class="btn btn-primary dropdown-btn">Download Now ▾</button>
@@ -63,7 +66,8 @@
       <div class="step">
         <div class="step-number">1</div>
         <h3>Record Your Actions</h3>
-        <p>Press record and perform any task. PyClicker will capture your mouse movements, clicks, and keyboard inputs.</p>
+        <p>Press record and perform any task. PyClicker will capture your mouse movements, clicks, and keyboard inputs.
+        </p>
       </div>
       <div class="step-arrow">→</div>
       <div class="step">
@@ -84,11 +88,13 @@
     <h2>What Our Users Say</h2>
     <div class="testimonial-grid">
       <div class="testimonial-card">
-        <p>"PyClicker has saved me hours of tedious work. The macro editor is powerful and easy to use. A must-have for any power user."</p>
+        <p>"PyClicker has saved me hours of tedious work. The macro editor is powerful and easy to use. A must-have for
+          any power user."</p>
         <div class="testimonial-author">- Alex, Data Analyst</div>
       </div>
       <div class="testimonial-card">
-        <p>"As a gamer, this tool is a game-changer. I can automate my grinding sessions and focus on strategy. The precision is spot on."</p>
+        <p>"As a gamer, this tool is a game-changer. I can automate my grinding sessions and focus on strategy. The
+          precision is spot on."</p>
         <div class="testimonial-author">- Sarah, Pro Gamer</div>
       </div>
     </div>
@@ -110,6 +116,7 @@
         </ul>
         <a href="#" class="btn btn-secondary">Download Free</a>
       </div>
+
       <div class="pricing-card recommended">
         <h3>Pro Lifetime</h3>
         <div class="price">$1,99</div>
@@ -121,10 +128,35 @@
           <li>✓ Pixel Recognition</li>
           <li>✓ Priority Support</li>
         </ul>
-        <a href="#" class="btn btn-primary">Get Pro License</a>
+
+        <!-- PayPal button with unique custom ID -->
+        <form id="paypalForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <input type="hidden" name="hosted_button_id" value="ZTVQM2TDD9V7U" />
+
+          <!-- Email input -->
+          <label for="buyerEmail">Write your email to receive your license key:</label><br>
+          <input type="email" id="buyerEmail" name="os0" placeholder="your@email.com" required />
+
+          <!-- Custom field filled automatically -->
+          <input type="hidden" id="customField" name="custom" value="" />
+
+          <input type="hidden" name="currency_code" value="EUR" />
+          <input type="submit" value="Buy PyClicker - $1,99" class="btn btn-secondary" />
+        </form>
       </div>
     </div>
   </section>
+
+  <script>
+    // Add unique ID + email to PayPal "custom" field before submit
+    document.getElementById("paypalForm").addEventListener("submit", function () {
+      const email = document.getElementById("buyerEmail").value.trim();
+      const uniqueId = "pyc-" + Date.now(); // Simple unique ID based on timestamp
+      document.getElementById("customField").value = uniqueId + "|" + email;
+    });
+  </script>
+
 
   <footer class="footer">
     <div class="footer-content">
@@ -144,4 +176,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
