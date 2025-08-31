@@ -46,6 +46,20 @@ window.addEventListener('click', (e) => {
   }
 });
 
+// Collapsible section
+document.querySelectorAll('.collapsible-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const content = btn.closest('.pro-features').querySelector('.collapsible-content');
+    if (content.style.display === 'block') {
+      content.style.display = 'none';
+      btn.innerHTML = 'View Details ▾';
+    } else {
+      content.style.display = 'block';
+      btn.innerHTML = 'Hide Details ▴';
+    }
+  });
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   // Abrir overlays genéricos por data-overlay
   document.querySelectorAll('[data-overlay]').forEach(link => {
