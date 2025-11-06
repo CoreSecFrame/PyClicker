@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<ApplicationIcon>icon.ico</ApplicationIcon>
+		<AssemblyName>PyClicker - Pro</AssemblyName>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+
+		<!-- Settings for single-file executable -->
+		<!-- This creates a single .exe but requires the .NET runtime to be installed on the target machine -->
+		<PublishSingleFile>true</PublishSingleFile>
+
+		<!-- Metadata to appear more trustworthy -->
+		<Company>CoreSecFrame</Company>
+		<Product>PyClicker - Pro</Product>
+		<Description>A tool to record and play back mouse and keyboard actions.</Description>
+		<Copyright>Copyright © 2025</Copyright>
+		<Version>1.2.0</Version>
+
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MouseKeyHook" Version="5.7.1" />
+		<PackageReference Include="System.Management" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="icon.ico" />
+	</ItemGroup>
+
+</Project>
