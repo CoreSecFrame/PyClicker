@@ -17,7 +17,6 @@
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#pricing">Pricing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -29,29 +28,24 @@
         reduce effort.</p>
 
       <div class="hero-buttons" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-        <!-- Botón de download dropdown existente -->
         <div class="dropdown">
           <button class="btn btn-primary dropdown-btn">Download Now ▾</button>
           <div class="dropdown-content">
             <a
-              href="https://github.com/sPROFFEs/autoclicker/releases/download/1.0/PyclickRecorder_Windows_installer.exe"><i
-                class="fab fa-windows"></i> Windows Installer (Free)</a>
-            <a href="https://github.com/CoreSecFrame/PyClicker/releases/download/pro/PyClicker-Pro.exe"><i
-                class="fab fa-windows"></i> Windows Pro (License required) (depends on .NET framework)</a>
-            <a href="https://github.com/CoreSecFrame/PyClicker/releases/download/pro/PyClickerPro-self.zip"><i
-                class="fab fa-windows"></i> Windows Pro (License required) (.NET self-contained)</a>
-            <a href="https://github.com/sPROFFEs/autoclicker/releases/download/1.0/PyclickRecorder_Linux_installer.sh"><i
-                class="fab fa-linux"></i> Linux Installer (Free)</a>
-            <a href="#"><i class="fab fa-linux"></i> Linux Pro (Coming Soon)</a>
-            <a href="https://github.com/sPROFFEs/autoclicker"><i class="fab fa-github"></i> Source Code (Free)</a>
+              href="https://github.com/sPROFFEs/autoclicker/releases/download/1.0/PyclickRecorder_Windows_installer.exe">
+              <i class="fab fa-windows"></i> Windows Installer
+            </a>
+            <a href="https://github.com/sPROFFEs/autoclicker/releases/download/1.0/PyclickRecorder_Linux_installer.sh">
+              <i class="fab fa-linux"></i> Linux Installer
+            </a>
+            <a href="https://github.com/sPROFFEs/autoclicker">
+              <i class="fab fa-github"></i> Source Code
+            </a>
           </div>
         </div>
-
-        <!-- Botón hacia pricing -->
-        <a href="#pricing" class="btn btn-secondary">Pricing</a>
       </div>
-
     </div>
+
     <div class="hero-image">
       <div class="animation-container">
         <div class="gear gear-1"><i class="fas fa-cog"></i></div>
@@ -72,12 +66,43 @@
       <div class="card">
         <div class="card-icon">🎯</div>
         <h3>Precision</h3>
-        <p>Utilize screen coordinates and keyboard combinations to capture all comands.</p>
+        <p>Utilize screen coordinates and keyboard combinations to capture all commands.</p>
       </div>
       <div class="card">
         <div class="card-icon">✨</div>
         <h3>Intuitive Interface</h3>
         <p>A user-friendly design that makes it simple to record, edit, and execute macros in minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="source-code" class="source-code">
+    <h2>Source Code & Tools</h2>
+    <p>Explore the open-source components that power PyClicker — from key generation to license management.</p>
+    <div class="feature-grid">
+      <div class="card">
+        <div class="card-icon">🔑</div>
+        <h3>Key Generator</h3>
+        <p>Generate and validate license keys for PyClicker installations.</p>
+        <a href="https://github.com/CoreSecFrame/PyClicker/tree/main/code/KeyGenerator" class="btn btn-primary" target="_blank">View Source</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🐍</div>
+        <h3>Python Version</h3>
+        <p>The main PyClicker automation engine written in Python for flexibility and portability.</p>
+        <a href="https://github.com/CoreSecFrame/PyClicker/tree/main/code/python_ver" class="btn btn-primary" target="_blank">View Source</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">💻</div>
+        <h3>C Version</h3>
+        <p>A lightweight version written in C for high-performance automation tasks.</p>
+        <a href="https://github.com/CoreSecFrame/PyClicker/tree/main/code/pyclicker" class="btn btn-primary" target="_blank">View Source</a>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h3>Telegram Bot</h3>
+        <p>Manage license verification and user activation directly through Telegram.</p>
+        <a href="https://github.com/CoreSecFrame/PyClicker/tree/main/code/bot_license" class="btn btn-primary" target="_blank">View Source</a>
       </div>
     </div>
   </section>
@@ -101,39 +126,7 @@
       <div class="step">
         <div class="step-number">3</div>
         <h3>Enable & Execute</h3>
-        <p>Assign a data and time to your macro and execute it daily or on demand.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="pro-features" class="pro-features">
-    <div class="collapsible-header">
-      <h2>Pro Features</h2>
-      <button class="btn collapsible-btn">View Details ▾</button>
-    </div>
-    <div class="collapsible-content">
-      <div class="feature-demonstration">
-        <div class="feature-item">
-          <h3>Demonstration Videos</h3>
-          <div class="video-placeholder">
-            <video width="320" height="240" controls>
-              <source src="assets/sample1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <video width="320" height="240" controls>
-              <source src="assets/sample2.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-        <div class="feature-item">
-          <h3>Scheduling Workflow</h3>
-          <div class="workflow-placeholder">
-            <p>Step-by-step guide on how to schedule a task with PyClicker Pro. Click images to enlarge.</p>
-            <a href="#" data-overlay="img1-overlay"><img src="assets/Flow Designer - TestFlow-Formular.png" alt="TestFlow-Formular" width="500" height="600"></a>
-            <a href="#" data-overlay="img2-overlay"><img src="assets/Flow Designer - WindowDetection-Test.png" alt="WindowDetection-Test" width="500" height="600"></a>
-          </div>
-        </div>
+        <p>Assign a date and time to your macro and execute it daily or on demand.</p>
       </div>
     </div>
   </section>
@@ -154,124 +147,12 @@
     </div>
   </section>
 
-  <section id="license-tutorial" class="how-it-works">
-    <h2>How to Activate Your License</h2>
-    <div class="steps-container">
-      <div class="step">
-        <div class="step-number">1</div>
-        <h3>Download and open the Software</h3>
-        <p>Launch PyClicker Pro, copy the ID key that would be genereated by the software.</p>
-      </div>
-      <div class="step-arrow">→</div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>Purchase a Pro License</h3>
-        <p>Choose the Pro plan, write your email and the generated key by the software.</p>
-      </div>
-      <div class="step-arrow">→</div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <h3>Enter Your Key</h3>
-        <p>Once the payment is completed an activation key would be sent to your email attached to the payment.
-          Copy and paste the license key into the activation field and click 'Activate'.</p>
-      </div>
-    </div>
-    <p class="license-note">
-      <b>Important:</b> The license is valid for a single device. While the key remains valid if you format your
-      computer, it will be invalidated if you change your hardware. Please contact support to transfer your license to a
-      new device.
-    </p>
-  </section>
-
-  <section id="pricing" class="pricing">
-    <h2>Choose Your Plan</h2>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <h3>Free</h3>
-        <div class="price">0€</div>
-        <ul>
-          <li>✓ Multiplatform python version</li>
-          <li>✓ Basic Macro Recording</li>
-          <li>✓ Unlimited Executions</li>
-          <li>✗ Macros management</li>
-          <li>✗ Macros scheduling</li>
-          <li>✗ Dark mode</li>
-          <li>✗ Background execution</li>
-          <li>✗ Shortcuts detection such as CTRL+C/CTRL+V</li>
-          <li>✗ Windows startup viabile</li>
-        </ul>
-        <a href="#" class="btn btn-secondary">Download Free</a>
-      </div>
-
-      <div class="pricing-card recommended">
-        <h3>Pro</h3>
-        <div class="price">1,99€</div>
-        <ul>
-          <li>✓ Windows C# version</li>
-          <li>✓ Basic Macro Recording</li>
-          <li>✓ Unlimited Executions</li>
-          <li>✓ Macros management</li>
-          <li>✓ Macros scheduling</li>
-          <li>✓ Dark mode</li>
-          <li>✓ Background execution</li>
-          <li>✓ Shortcuts detection such as CTRL+C/CTRL+V</li>
-          <li>✓ Windows startup viabile</li>
-        </ul>
-
-        <!-- Botón Buy -->
-        <button class="btn btn-secondary" id="buyBtn">Buy PyClicker Pro</button>
-
-        <!-- Overlay -->
-        <div id="buyOverlay" class="overlay">
-          <div class="overlay-content">
-            <a href="#" class="close-btn">&times;</a>
-            <h2>Complete Your Purchase</h2>
-            <form id="paypalOverlayForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick" />
-              <input type="hidden" name="hosted_button_id" value="ZTVQM2TDD9V7U" />
-              <input type="hidden" id="customFieldOverlay" name="custom" value="" />
-
-              <label class="pricing-field" for="overlayEmail">Your Email:</label>
-              <input class="pricing-field" type="email" id="overlayEmail" name="os0" placeholder="your@email.com"
-                required />
-
-              <label class="pricing-field" for="overlayKey">Software-Generated Key:</label>
-              <input class="pricing-field" type="text" id="overlayKey" placeholder="ABC123-XYZ456" required />
-
-              <input type="hidden" name="currency_code" value="EUR" />
-              <input type="submit" class="btn btn-secondary" value="Pay with PayPal" />
-            </form>
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
     <p>Have questions or feedback? Reach out to us.</p>
     <a href="https://mail.google.com/mail/?view=cm&to=pyclickermanager.material438@slmails.com" target="_blank"
       class="btn btn-primary">Email Us</a>
   </section>
-
-  <script>
-    // Antes de enviar el formulario, generamos un ID único y combinamos todo en el campo custom
-    document.getElementById("paypalForm").addEventListener("submit", function (e) {
-      const email = document.getElementById("buyerEmail").value.trim();
-      const userKey = document.getElementById("userKey").value.trim();
-      if (!email || !userKey) {
-        e.preventDefault(); // Evitar envío si faltan datos
-        alert("Please enter both your email and software key.");
-        return;
-      }
-      const uniqueId = "pyc-" + Date.now(); // ID de compra único basado en timestamp
-      // Combinamos: CompraID | Email | SoftwareKey
-      document.getElementById("customField").value = `${uniqueId}|${email}|${userKey}`;
-    });
-  </script>
-
 
   <footer class="footer">
     <div class="footer-content">
@@ -285,24 +166,10 @@
         <a href="https://github.com/sPROFFEs/autoclicker">GitHub</a>
       </div>
     </div>
-    <p>© 2025 PyClicker | All rights reserved</p>
+    <p>© 2025 PyClicker | Open Source Project</p>
   </footer>
 
   <script src="script.js"></script>
-
-  <!-- Image Overlays -->
-  <div id="img1-overlay" class="overlay image-overlay">
-    <div class="overlay-content">
-      <a href="#" class="close-btn">&times;</a>
-      <img src="assets/Flow Designer - TestFlow-Formular.png" alt="TestFlow-Formular">
-    </div>
-  </div>
-  <div id="img2-overlay" class="overlay image-overlay">
-    <div class="overlay-content">
-      <a href="#" class="close-btn">&times;</a>
-      <img src="assets/Flow Designer - WindowDetection-Test.png" alt="WindowDetection-Test">
-    </div>
-  </div>
 
   <!-- Overlays -->
   <div id="privacy-overlay" class="overlay">
@@ -311,14 +178,6 @@
       <h2>Privacy Policy</h2>
       <p>Your privacy is important to us. It is PyClicker's policy to respect your privacy regarding any information we
         may collect from you across our website.</p>
-      <p>We only ask for personal information when we truly need it to provide a service to you. We collect it by fair
-        and lawful means, with your knowledge and consent. We also let you know why we’re collecting it and how it will
-        be used.</p>
-      <p>We only retain collected information for as long as necessary to provide you with your requested service. What
-        data we store, we’ll protect within commercially acceptable means to prevent loss and theft, as well as
-        unauthorized access, disclosure, copying, use or modification.</p>
-      <p>We don’t share any personally identifying information publicly or with third-parties, except when required to
-        by law.</p>
     </div>
   </div>
 
@@ -326,14 +185,9 @@
     <div class="overlay-content">
       <a href="#" class="close-btn">&times;</a>
       <h2>Terms of Use</h2>
-      <p>By accessing the website at pyclicker.com, you are agreeing to be bound by these terms of service, all
-        applicable laws and regulations, and agree that you are responsible for compliance with any applicable local
-        laws.</p>
-      <p>Permission is granted to temporarily download one copy of the materials (information or software) on
-        PyClicker's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a
-        transfer of title.</p>
-      <p>This license shall automatically terminate if you violate any of these restrictions and may be terminated by
-        PyClicker at any time.</p>
+      <p>This open-source project is provided "as is" without warranty of any kind. You are free to use, modify, and
+        distribute
+        it under the terms of its license.</p>
     </div>
   </div>
 </body>

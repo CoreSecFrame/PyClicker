@@ -1,4 +1,4 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 1; padding: 0; box-sizing: border-box; }
 body {
   font-family: 'Inter', sans-serif;
   color: #334155; /* Darker gray for better readability */
@@ -603,3 +603,4 @@ section.visible {
   max-height: 100%;
   object-fit: contain;
 }
+
