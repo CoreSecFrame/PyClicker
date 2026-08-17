@@ -30,22 +30,6 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
   });
 });
 
-// Dropdown toggle
-document.querySelectorAll('.dropdown-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.parentElement.classList.toggle('show');
-  });
-});
-
-// Close dropdown when clicking outside
-window.addEventListener('click', (e) => {
-  if (!e.target.matches('.dropdown-btn')) {
-    document.querySelectorAll('.dropdown').forEach(drop => {
-      drop.classList.remove('show');
-    });
-  }
-});
-
 // Collapsible section
 document.querySelectorAll('.collapsible-btn').forEach(btn => {
   btn.addEventListener('click', () => {
