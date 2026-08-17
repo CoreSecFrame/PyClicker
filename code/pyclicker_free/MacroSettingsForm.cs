@@ -372,7 +372,7 @@ namespace PyClickerRecorder
             // Save schedule settings
             if (noScheduleRadio.Checked)
             {
-                _macro.ScheduleMode = (MacroScheduleMode)0; // No schedule
+                _macro.ScheduleMode = MacroScheduleMode.None;
                 _macro.ScheduledTime = new DateTime(2000, 1, 1);
                 _macro.ScheduledEndTime = new DateTime(2000, 1, 1);
                 _macro.RepeatDaily = false;

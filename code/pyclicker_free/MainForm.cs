@@ -13,6 +13,7 @@ namespace PyClickerRecorder
         private readonly Player _player;
         private readonly Recorder _recorder;
         private List<RecordedAction> _recordedActions;
+        private readonly MacroDraft _currentMacro = new MacroDraft();
         private bool _isRecording;
         private readonly IKeyboardMouseEvents? _globalHook;
         private List<SavedMacro> _savedMacros;
@@ -77,6 +78,7 @@ namespace PyClickerRecorder
             // Wire up event handlers
             this.playButton.Click += PlayButton_Click;
             this.recordButton.Click += RecordButton_Click;
+            this.currentMacroSettingsButton.Click += CurrentMacroSettingsButton_Click;
             this.saveMenuItem.Click += SaveAsMenuItem_Click;
             this.loadMenuItem.Click += LoadMenuItem_Click;
             // Settings controls removed - now handled by MacroSettingsForm
@@ -161,6 +163,7 @@ namespace PyClickerRecorder
 
                 // Get actions and update listbox
                 _recordedActions = _recorder.Actions;
+                _currentMacro.ReplaceActions(_recordedActions);
                 UpdateActionsListBox();
             }
             else
@@ -208,12 +211,9 @@ namespace PyClickerRecorder
 
         private async void PlayButton_Click(object? sender, EventArgs e)
         {
-            const string currentMacroName = "__CURRENT__";
-            var tempMacro = new SavedMacro { Name = currentMacroName };
-
-            if (_runningMacros.ContainsKey(currentMacroName))
+            if (_runningMacros.ContainsKey(MacroDraft.RuntimeName))
             {
-                StopMacro(tempMacro);
+                StopMacro(_currentMacro.Macro);
                 playButton.Text = "Start Playback (F7)";
                 statusLabel.Text = "Ready";
                 return;
@@ -225,20 +225,12 @@ namespace PyClickerRecorder
                 return;
             }
 
-            // Create a temporary macro with default settings for playback
-            var currentMacro = new SavedMacro
-            {
-                Name = currentMacroName,
-                Actions = new List<RecordedAction>(_recordedActions),
-                LoopCount = 1,
-                InfiniteLoop = false,
-                SpeedFactor = 1.0
-            };
+            _currentMacro.ReplaceActions(_recordedActions);
 
             playButton.Text = "Stop Playback (F7)";
             statusLabel.Text = "Playing...";
 
-            await PlayMacro(currentMacro, currentMacro.InfiniteLoop);
+            await PlayMacro(_currentMacro.Macro, _currentMacro.Macro.InfiniteLoop);
 
             playButton.Text = "Start Playback (F7)";
             statusLabel.Text = "Ready";
@@ -246,18 +238,20 @@ namespace PyClickerRecorder
 
         private void UpdateMacroPropertiesFromForm(SavedMacro macro)
         {
-            macro.Actions = new List<RecordedAction>(_recordedActions);
+            _currentMacro.ReplaceActions(_recordedActions);
+            _currentMacro.CopyTo(macro);
+        }
 
-            // Set defaults for new macros - settings configured via MacroSettingsForm
-            if (macro.LoopCount == 0) // Only set defaults for truly new macros
+        private void CurrentMacroSettingsButton_Click(object? sender, EventArgs e)
+        {
+            _currentMacro.ReplaceActions(_recordedActions);
+
+            using (var settingsForm = new MacroSettingsForm(_currentMacro.Macro))
             {
-                macro.LoopCount = 1;
-                macro.InfiniteLoop = false;
-                macro.SpeedFactor = 1.0;
-                macro.ScheduleMode = (MacroScheduleMode)0; // Default/None
-                macro.ScheduledTime = new DateTime(2000, 1, 1);
-                macro.ScheduledEndTime = new DateTime(2000, 1, 1);
-                macro.RepeatDaily = false;
+                if (settingsForm.ShowDialog() == DialogResult.OK)
+                {
+                    statusLabel.Text = "Unsaved macro settings updated.";
+                }
             }
         }
 
@@ -310,7 +304,9 @@ namespace PyClickerRecorder
                     {
                         string jsonString = File.ReadAllText(openFileDialog.FileName);
                         var options = new JsonSerializerOptions();
-                        _recordedActions = JsonSerializer.Deserialize<List<RecordedAction>>(jsonString, options);
+                        _recordedActions = JsonSerializer.Deserialize<List<RecordedAction>>(jsonString, options)
+                            ?? new List<RecordedAction>();
+                        _currentMacro.ReplaceActions(_recordedActions);
                         UpdateActionsListBox();
                         statusLabel.Text = $"Loaded: {Path.GetFileName(openFileDialog.FileName)}";
                     }
@@ -408,8 +404,8 @@ namespace PyClickerRecorder
                     continue;
                 }
 
-                // Skip macros without schedule (default value 0) or with invalid dates
-                if (macro.ScheduleMode == (MacroScheduleMode)0 || macro.ScheduledTime.Year < 1900)
+                // Skip macros without a schedule or with invalid dates
+                if (macro.ScheduleMode == MacroScheduleMode.None || macro.ScheduledTime.Year < 1900)
                 {
                     continue;
                 }
@@ -709,6 +705,7 @@ namespace PyClickerRecorder
             var macroToEdit = (SavedMacro)selectedItem.Tag;
 
             _recordedActions = new List<RecordedAction>(macroToEdit.Actions);
+            _currentMacro.Load(macroToEdit);
             UpdateActionsListBox();
 
             // All settings are now handled by MacroSettingsForm - no UI updates needed here

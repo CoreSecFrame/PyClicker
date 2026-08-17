@@ -32,6 +32,7 @@ namespace PyClickerRecorder
             playButton = new Button();
             recordButton = new Button();
             saveMacroButton = new Button();
+            currentMacroSettingsButton = new Button();
             savedMacrosTab = new TabPage();
             savedMacrosListView = new ListView();
             newMacroButton = new Button();
@@ -138,6 +139,7 @@ namespace PyClickerRecorder
             recordPlayTab.Controls.Add(playButton);
             recordPlayTab.Controls.Add(recordButton);
             recordPlayTab.Controls.Add(saveMacroButton);
+            recordPlayTab.Controls.Add(currentMacroSettingsButton);
             recordPlayTab.Location = new Point(4, 24);
             recordPlayTab.Margin = new Padding(3, 2, 3, 2);
             recordPlayTab.Name = "recordPlayTab";
@@ -187,6 +189,17 @@ namespace PyClickerRecorder
             saveMacroButton.TabIndex = 3;
             saveMacroButton.Text = "Save Macro";
             saveMacroButton.UseVisualStyleBackColor = true;
+            //
+            // currentMacroSettingsButton
+            //
+            currentMacroSettingsButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            currentMacroSettingsButton.Location = new Point(446, 11);
+            currentMacroSettingsButton.Margin = new Padding(3, 2, 3, 2);
+            currentMacroSettingsButton.Name = "currentMacroSettingsButton";
+            currentMacroSettingsButton.Size = new Size(76, 28);
+            currentMacroSettingsButton.TabIndex = 4;
+            currentMacroSettingsButton.Text = "Settings";
+            currentMacroSettingsButton.UseVisualStyleBackColor = true;
             // 
             // savedMacrosTab
             // 
@@ -471,6 +484,7 @@ namespace PyClickerRecorder
         private System.Windows.Forms.TabPage recordPlayTab;
         private System.Windows.Forms.Button recordButton;
         private System.Windows.Forms.Button playButton;
+        private System.Windows.Forms.Button currentMacroSettingsButton;
         private System.Windows.Forms.ListBox actionsListBox;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel statusLabel;

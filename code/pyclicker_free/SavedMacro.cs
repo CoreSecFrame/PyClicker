@@ -5,6 +5,7 @@ namespace PyClickerRecorder
 {
     public enum MacroScheduleMode
     {
+        None = -1,
         SpecificTime,
         TimeRange,
         OnWindowsStartup
@@ -29,8 +30,9 @@ namespace PyClickerRecorder
             Name = "New Macro";
             SpeedFactor = 1.0;
             LoopCount = 1;
-            ScheduledTime = DateTime.Now;
-            ScheduledEndTime = DateTime.Now;
+            ScheduleMode = MacroScheduleMode.None;
+            ScheduledTime = new DateTime(2000, 1, 1);
+            ScheduledEndTime = new DateTime(2000, 1, 1);
         }
     }
 }

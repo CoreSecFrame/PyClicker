@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\pyclicker_free\Actions.cs" Link="Actions.cs" />
+    <Compile Include="..\pyclicker_free\SavedMacro.cs" Link="SavedMacro.cs" />
+    <Compile Include="..\pyclicker_free\MacroDraft.cs" Link="MacroDraft.cs" />
+  </ItemGroup>
+</Project>
