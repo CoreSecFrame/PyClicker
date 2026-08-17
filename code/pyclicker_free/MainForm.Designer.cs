@@ -87,7 +87,7 @@ namespace PyClickerRecorder
             // 
             trayIcon.ContextMenuStrip = trayContextMenu;
             trayIcon.Text = "PyClicker - Free";
-            trayIcon.Visible = true;
+            trayIcon.Visible = false;
             // 
             // menuStrip
             // 

@@ -1,5 +1,13 @@
 using PyClickerRecorder;
 
+var iconResourceName = EmbeddedResourceName.FindIcon(new[]
+{
+    "PyClickerRecorderFree.MainForm.resources",
+    "PyClickerRecorderFree.icon.ico"
+});
+Assert(iconResourceName == "PyClickerRecorderFree.icon.ico",
+    "The tray icon loader must discover the icon regardless of the assembly's root namespace.");
+
 var draft = new MacroDraft();
 Assert(draft.Macro.ScheduleMode == MacroScheduleMode.None, "A new draft must not be scheduled.");
 draft.Macro.LoopCount = 7;

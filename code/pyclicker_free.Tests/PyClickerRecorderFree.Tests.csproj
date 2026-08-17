@@ -10,5 +10,6 @@
     <Compile Include="..\pyclicker_free\Actions.cs" Link="Actions.cs" />
     <Compile Include="..\pyclicker_free\SavedMacro.cs" Link="SavedMacro.cs" />
     <Compile Include="..\pyclicker_free\MacroDraft.cs" Link="MacroDraft.cs" />
+    <Compile Include="..\pyclicker_free\EmbeddedResourceName.cs" Link="EmbeddedResourceName.cs" />
   </ItemGroup>
 </Project>

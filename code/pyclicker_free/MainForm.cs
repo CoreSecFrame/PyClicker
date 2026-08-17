@@ -41,14 +41,21 @@ namespace PyClickerRecorder
             try
             {
                 var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-                using (var stream = assembly.GetManifestResourceStream("PyClickerRecorder.icon.ico"))
+                var iconResourceName = EmbeddedResourceName.FindIcon(assembly.GetManifestResourceNames());
+                using (var stream = iconResourceName == null
+                    ? null
+                    : assembly.GetManifestResourceStream(iconResourceName))
                 {
+                    Icon? icon = null;
                     if (stream != null)
                     {
-                        var icon = new Icon(stream);
-                        this.Icon = icon;
-                        trayIcon.Icon = icon;
+                        using var embeddedIcon = new Icon(stream);
+                        icon = (Icon)embeddedIcon.Clone();
                     }
+
+                    icon ??= Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+                    this.Icon = icon;
+                    trayIcon.Icon = icon == null ? null : (Icon)icon.Clone();
                 }
             }
             catch (Exception ex)
